@@ -10,7 +10,7 @@ class MyMongoDB:
         self.database_name = os.environ.get('DATABASE_NAME')
 
         if not self.database_name:
-            raise ValueError("MongoDB URI沒有設置")
+            raise ValueError("MongoDB URI沒有設置成功")
 
         try:
             self.client = MongoClient(self.mongodb_uri)
