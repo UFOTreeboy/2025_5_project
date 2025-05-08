@@ -1,14 +1,11 @@
 from flask import Blueprint, jsonify, request
 from api.database.database import MyMongoDB
 from uuid import uuid4
-from flask_wtf.csrf import CSRFProtect
 
 main = Blueprint('main', __name__)
 
-csrf = CSRFProtect()
 
 @main.route("/main", methods=['GET', 'POST', 'PUT', 'DELETE'])
-@csrf.exempt
 def user_handler():
     mongo = MyMongoDB()
     collection = mongo.connect_to_collection("customer_list")
