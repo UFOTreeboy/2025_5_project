@@ -7,7 +7,7 @@ load_dotenv()
 redis_url = os.environ.get('CACHE_REDIS_URL')
 
 if not redis_url:
-    raise ValueError("Redis連線失效")
+    raise ValueError("Redis連線失敗")
 
 cache = Cache(config={
     'CACHE_TYPE': 'redis',
